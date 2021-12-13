@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<conio.h>
+int fact(int);
+void main()
+{int n,r,a,b,p=0;
+clrscr();
+printf("enter the value of n and r");
+scanf("%d%d",&n,&r);
+a=fact(n);
+b=fact(n-r);
+p=a/b;
+printf("value of npr is=%d",p);
+getch();
+}
+int fact(int a)
+{int f=1;
+for(int i=1;i<=a;i++)
+{ f=f*i;
+}
+return(f);
+}
