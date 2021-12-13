@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void prime(int);
+void arm(int);
+int count(int);
+void main()
+{int x,ch,y;
+clrscr();
+printf("enter the number");
+scanf("%d",&x);
+printf("enter 1.prime no check 2,armstrongno");
+scanf("%d",&ch);
+switch(ch)
+{ case 1 :prime(x);
+	 break;
+  case 2 :arm(x);
+	  break;
+  default : printf("wrong choice");
+ }
+ getch();
+ }
+ void prime(int a)
+ {int flag=0;
+ for(int i=1;i<=a/2;i++)
+    {if(a%i==0)
+     {printf("no is not prime");
+     flag=1;
+     break;
+       } }
+       if(flag==0)
+       printf("no is prime");
+    }
+ int count(int c)
+ { int x=0;
+ while(c!=0)
+ { c=c/10;
+ x++;
+ }
+ return x;
+ }
+ void arm(int b)
+ { int sum=0,c,r,d;
+   c=b;
+   d=count(b);
+   while(b>0)
+   { r=b%10;
+   sum=sum+pow(r,d);
+    b=b/10;
+    }
+  if(sum==c)
+  printf("no is armstrong");
+  else
+  printf("no is not armstrong");
+  }
